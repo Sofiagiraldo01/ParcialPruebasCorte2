@@ -11,8 +11,15 @@ public class RecargaService {
             boolean premium) {
 
         validarMonto(monto);
+        double bonificacion = 10;
 
-        return null;
+        return new ResultadoRecarga(
+                monto,
+                bonificacion,
+                0
+        );
+
+
     }
 
     private void validarMonto(double monto) {

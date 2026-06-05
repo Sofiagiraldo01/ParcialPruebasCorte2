@@ -1,4 +1,10 @@
 package com.recargaya.model;
 
-public class ResultadoRecarga {
+public record ResultadoRecarga(
+        double monto,
+        double porcentajeBonificacion,
+        double datosBonificados
+) {
 }
+
+
