@@ -42,4 +42,16 @@ public class RecargaServiceTest {
                 r.porcentajeBonificacion()
         );
     }
+
+    @Test
+    void debeAplicar25Porciento() {
+
+        ResultadoRecarga r =
+                service.calcularRecarga(30000,false);
+
+        assertEquals(
+                25,
+                r.porcentajeBonificacion()
+        );
+    }
 }
