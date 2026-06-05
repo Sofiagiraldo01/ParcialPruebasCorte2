@@ -15,4 +15,16 @@ public class RecargaServiceTest {
                 () -> service.calcularRecarga(999, false)
         );
     }
+
+    @Test
+    void debeRechazarMontosMayoresA50000() {
+
+        assertThrows(
+                MontoInvalidoException.class,
+                () -> service.calcularRecarga(
+                        50001,
+                        false
+                )
+        );
+    }
 }
