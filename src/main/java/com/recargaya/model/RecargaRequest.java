@@ -1,4 +1,8 @@
 package com.recargaya.model;
 
-public class RecargaRequest {
+public record RecargaRequest(
+        double monto,
+        boolean premium
+) {
 }
+
