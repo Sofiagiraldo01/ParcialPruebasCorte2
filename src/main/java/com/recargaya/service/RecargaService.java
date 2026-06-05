@@ -11,7 +11,17 @@ public class RecargaService {
             boolean premium) {
 
         validarMonto(monto);
-        double bonificacion = 10;
+
+        double bonificacion =
+                calcularBonificacion(monto);
+
+        bonificacion =
+                aplicarPremium(
+                        bonificacion,
+                        premium
+                );
+
+
 
         return new ResultadoRecarga(
                 monto,
@@ -21,7 +31,6 @@ public class RecargaService {
 
 
     }
-
     private void validarMonto(double monto) {
 
         if (monto < 1000 || monto > 50000) {
@@ -30,5 +39,31 @@ public class RecargaService {
             );
         }
     }
+
+    private double calcularBonificacion(
+            double monto) {
+
+        if (monto >= 30000) {
+            return 25;
+        }
+
+        if (monto >= 10000) {
+            return 10;
+        }
+
+        return 0;
+    }
+
+    private double aplicarPremium(
+            double bonificacion,
+            boolean premium) {
+
+        if (premium) {
+            return bonificacion + 5;
+        }
+
+        return bonificacion;
+    }
+
 
 }
