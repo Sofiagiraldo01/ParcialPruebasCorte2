@@ -12,9 +12,9 @@ public class RecargaService {
 
         validarMonto(monto);
 
-
         return null;
     }
+
     private void validarMonto(double monto) {
 
         if (monto < 1000 || monto > 50000) {
@@ -23,4 +23,5 @@ public class RecargaService {
             );
         }
     }
+
 }
