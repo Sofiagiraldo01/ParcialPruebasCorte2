@@ -3,17 +3,17 @@ package com.recargaya.controller;
 import com.recargaya.model.RecargaRequest;
 import com.recargaya.model.ResultadoRecarga;
 import com.recargaya.service.RecargaService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/recargas")
-@RequiredArgsConstructor
 public class RecargaController {
+
     private final RecargaService service;
+
+    public RecargaController(RecargaService service) {
+        this.service = service;
+    }
 
     @PostMapping
     public ResultadoRecarga calcular(
